@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +60,6 @@ Route::get('show/{id}', function ($id) {
     //return view('about', ['tasks' => $tasks]);
     return view('show', compact('task'));
 });
+// التعامل مع قواعد البيانات
+Route::get('/contact', [TaskController::class, 'index']);
+Route::get('/contact/{id}', [TaskController::class, 'show']);
